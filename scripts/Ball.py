@@ -6,14 +6,15 @@
                             Ponto
     Membros :               Lorena Bassani
 """
-from .Agente import Agente
-from .Geometria import Ponto
-from .Patterns.Singleton import Singleton
+from Agente import Agente
+from Geometria import Ponto
+from Patterns.Singleton import Singleton
+
 
 class Ball(Agente, Singleton):
 
     def __init__(self, *args, **keyargs):
         pass
 
-    def inicializa(self, ponto = Ponto()):
+    def inicializa(self, ponto=Ponto()):
         Agente.__init__(self, ponto)

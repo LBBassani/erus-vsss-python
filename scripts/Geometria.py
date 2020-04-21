@@ -1,11 +1,12 @@
 """ Nome do módulo :      Geometria
-    Ano de criação :      2019/10 
+    Ano de criação :      2019/10
     Descrição do módulo : Módulo de auxílio para calculos geometricos
     Versão :              1.0
     Pré-requisitos :      math
     Membros :             Lorena Bassani
 """
 import math as m
+
 
 class Ponto(object):
 
@@ -18,10 +19,11 @@ class Ponto(object):
                              float : Coordenada y
         Retorno :            Objeto tipo ponto criado
     """
-    def __init__(self, x = 0, y = 0):
+
+    def __init__(self, x=0, y=0):
         self.x = x
         self.y = y
-    
+
     """ Nome da função :     Getters e Setters
         Intenção da função : Acesso de escrita e leitura as propriedades de Ponto
         Pré-requisitos :     Nenhum
@@ -33,7 +35,7 @@ class Ponto(object):
     @property
     def x(self):
         return self._x
-    
+
     @x.setter
     def x(self, value):
         self._x = value
@@ -41,21 +43,21 @@ class Ponto(object):
     @property
     def y(self):
         return self._y
-    
+
     @y.setter
     def y(self, value):
         self._y = value
-    
+
     @property
     def posicao(self):
         return (self.x, self.y)
-    
+
     @posicao.setter
     def posicao(self, value):
         x, y = value
         self.x = x
         self.y = y
-    
+
     def __eq__(self, outro):
         return self.posicao == outro.posicao
 
@@ -66,8 +68,10 @@ class Ponto(object):
         Parâmetros :         Ponto : ponto para calcular a distância a partir deste
         Retorno :            float : distância entre os pontos
     """
+
     def distancia(self, outro):
         return m.sqrt((self.x - outro.x)**2 + (self.y - outro.y)**2)
+
 
 def to180range(angle):
     M_PI = 3.14159
